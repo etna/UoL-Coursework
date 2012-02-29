@@ -3,11 +3,11 @@ import java.io.*;
 
 public class customer
 {
-    public String name;
-    public String address1;
-    public String address2;
+    public String fullname;
+    public String saddress;
+    public String bnumber;
     public String state;
-    public String postcode;
+    public String pcode;
     
     public customer()
     {
@@ -18,8 +18,8 @@ public class customer
     {
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter your full name: ");
-        System.out.println("'\'> ");
-        String fullname = in.nextLine();
+        System.out.print("> ");
+        fullname = in.nextLine();
         return fullname;
     }
     
@@ -27,8 +27,8 @@ public class customer
     {
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter your Street address: ");
-        System.out.println("'\'> ");
-        String saddress = in.nextLine();
+        System.out.print("> ");
+        saddress = in.nextLine();
         return saddress;
     }
     
@@ -36,8 +36,8 @@ public class customer
     {
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter your House or Apartment number:");
-        System.out.println("'\'> ");
-        String bnumber = in.nextLine();
+        System.out.print("> ");
+        bnumber = in.nextLine();
         return bnumber;
     }
     
@@ -45,8 +45,8 @@ public class customer
     {
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter your State of residence: ");
-        System.out.println("'\'> ");
-        String state = in.nextLine();
+        System.out.println("> ");
+        state = in.nextLine();
         return state;
     }
     
@@ -54,15 +54,27 @@ public class customer
     {
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter your postal code: ");
-        System.out.println("'\'> ");
-        String pcode = in.nextLine();
+        System.out.println("> ");
+        pcode = in.nextLine();
         return pcode;
     }
     
     public void billinfo()
     {
-        customer a = new customer ();
-        a.fullname();
-        
+        fullname();
+        address1();
+        address2();
+        state();
+        pcode();
+    }
+    
+    public void displayCustInfo()
+    {
+        System.out.println("NAME: " + fullname);
+        System.out.println("ADDRESS-1: " + saddress);
+        System.out.println("ADDRESS-2: " + bnumber);
+        System.out.println("ADDRESS-3: " + state);
+        System.out.println("POST CODE: " + pcode);
+       
     }
 }
