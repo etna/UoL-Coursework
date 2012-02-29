@@ -3,41 +3,9 @@ import java.io.*;
 
 public class shoppingsucks
 {
-    product[] stuff = new product[9];
-
-    public void read_file ()throws IOException
-    {Scanner in = new Scanner(new FileReader("inventory.txt"));
-            while (in.hasNext()) 
-            {
-                //store it to array of objects
-                for(int i=0 ; i <= 8 ; i = i+ 1)
-                {
-                    stuff[i].p_code=in.nextLine();
-                    .
-                    .
-                }
-
-                }
-                /*for (int i = 0; i < 3; i = i + 1)
-                {
-                    System.out.print(in.nextLine());
-                } */
-
-                
-                //put another for loop
-                
-            
-            in.close();
-            }
-    public void display_cat()
-    {
-        System.out.println("     HARDWARE ITEMS");
-	System.out.println("CODE         DESCRIPTION                         WEIGHT(g)    UNIT PRICE     ");
-        for(int i=0 ; i <= 8 ; i = i+ 1)
-        {
-            //output
-        }
-    }
+    
+    product stuff[] = new product[9];
+    
     public static void main(String[] args)
     throws IOException
     {
@@ -45,12 +13,34 @@ public class shoppingsucks
         a.initialize();
     }
     
-    public void getInventory() 
-    throws IOException
+    
+    public void readFile() throws IOException
     {
-        order a = new order();
-        a.displayInventory();
+        product a = new product();
+        Scanner in = new Scanner(new FileReader("inventory.txt"));
+            while (in.hasNext())
+            {
+                for (int i = 0; i <= 8; i = i + 1)
+                {
+                    stuff[i].pid = in.nextLine();
+                    stuff[i].pdesc = in.nextLine();
+                    stuff[i].weight = Integer.parseInt(in.nextLine());
+                    stuff[i].cost = Integer.parseInt(in.nextLine());
+                }
+            }
+            in.close();
     }
+    public void showList()
+    {
+        product a = new product ();
+        System.out.println("     HARDWARE ITEMS");
+	System.out.println("CODE         DESCRIPTION                         WEIGHT(g)    UNIT PRICE     ");
+        for (int i = 0; i <= 8; i = i + 1)
+        {
+            a.displayInventory();
+        }
+    }
+    
     
     public void getCustomer()
     {
@@ -62,7 +52,8 @@ public class shoppingsucks
     public void initialize()
     throws IOException
     {
-        getInventory();
+        readFile();
+        showList();
         System.out.println("");
         getCustomer();
     }
