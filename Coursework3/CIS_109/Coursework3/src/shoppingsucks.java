@@ -1,10 +1,17 @@
 import java.util.*;
 import java.io.*;
+import java.text.*;
 
 public class shoppingsucks
 {
-    
     product stuff[] = new product[9];
+    DecimalFormat f = new DecimalFormat("0.00");
+    double ttcost = 0;
+    double shipcost = 0;
+    int ttweight = 0;
+    int units = 0;
+    int check = 0;
+    
     
     public static void main(String[] args)
     throws IOException
@@ -13,48 +20,37 @@ public class shoppingsucks
         a.initialize();
     }
     
-    
-    public void readFile() throws IOException
+    public void playInventory()
+    throws IOException
     {
-        product a = new product();
-        Scanner in = new Scanner(new FileReader("inventory.txt"));
-            while (in.hasNext())
+        Scanner in = new Scanner(new FileReader("inventoryDisplay.txt"));
+            while (in.hasNext()) 
             {
-                for (int i = 0; i <= 8; i = i + 1)
+                for(int i=0; i < 3; i = i + 1)
                 {
-                    stuff[i].pid = in.nextLine();
-                    stuff[i].pdesc = in.nextLine();
-                    stuff[i].weight = Integer.parseInt(in.nextLine());
-                    stuff[i].cost = Integer.parseInt(in.nextLine());
+                    System.out.print(in.nextLine());
                 }
+                System.out.println(in.nextLine());
             }
             in.close();
     }
-    public void showList()
+    
+    
+    public void showInventory()
     {
-        product a = new product ();
         System.out.println("     HARDWARE ITEMS");
 	System.out.println("CODE         DESCRIPTION                         WEIGHT(g)    UNIT PRICE     ");
-        for (int i = 0; i <= 8; i = i + 1)
-        {
-            a.displayInventory();
-        }
     }
     
-    
-    public void getCustomer()
-    {
-        customer a = new customer();
-        a.billinfo();
-        a.displayCustInfo();    
-    }
     
     public void initialize()
     throws IOException
     {
-        readFile();
-        showList();
+        order o = new order();
+        showInventory();
+        playInventory();
         System.out.println("");
-        getCustomer();
+        o.readFile();
+        o.startOrder();
     }
 }

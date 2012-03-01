@@ -1,25 +1,16 @@
 import java.util.*;
 import java.io.*;
-        
+import java.text.*;
+
 public class product
 {
     public String pid;
     public String pdesc;
     public int weight;
-    public int cost;
+    public double cost;
     public int orderquantity;
-    
-    
-    public String getString(String s)
-    {
-        return s;
-    }
-    
-    public void displayInventory()
-    {
-        System.out.println(pid);
-        System.out.println(pdesc);
-        System.out.println(weight);
-        System.out.println(cost);
-    }
+    public double totalcost;
+    public int totalweight;
+    DecimalFormat f = new DecimalFormat("0.00");
+
 }

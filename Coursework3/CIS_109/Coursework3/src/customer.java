@@ -70,11 +70,23 @@ public class customer
     
     public void displayCustInfo()
     {
+        System.out.println("PLACE YOUR ORDER!");
         System.out.println("NAME: " + fullname);
         System.out.println("ADDRESS-1: " + saddress);
         System.out.println("ADDRESS-2: " + bnumber);
         System.out.println("ADDRESS-3: " + state);
         System.out.println("POST CODE: " + pcode);
+       
+    }
+    
+    public void invoiceCustomer()
+    {
+        System.out.println(fullname);
+        System.out.println(saddress);
+        System.out.println(bnumber);
+        System.out.println(state);
+        System.out.println(state + "	POST CODE: " + pcode);
+        System.out.println();
        
     }
 }
