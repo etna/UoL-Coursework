@@ -3,6 +3,9 @@ import java.io.*;
 
 public class end
 {    
+    public end()
+    {
+    }
     public boolean endNo()
     {
         System.out.println("\nThank you for shopping with us. The program will now terminate."); 

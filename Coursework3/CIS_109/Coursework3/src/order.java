@@ -14,6 +14,7 @@ public class order
     int check = 0;
     double VAT = 20; //must eventually substitute with filereader
     double ship = 100; //must eventually substitute with filereader
+    customer a = new customer();
     
     public void readFile()
     throws IOException
@@ -35,7 +36,7 @@ public class order
     
     public void getCustomer()
     {
-        customer a = new customer();
+        
         a.billinfo();
         a.displayCustInfo();    
     }
@@ -49,144 +50,8 @@ public class order
 	    stuff[r-1].totalcost = 0;
         }
     }
-    
-    public void getK16()
-    {
-        System.out.println("QUANTITY: ");
-        stuff[0].orderquantity = stuff[0].orderquantity + in.nextInt();
-        {
-            while (stuff[0].orderquantity > 100 || stuff[0].orderquantity < 0)
-             {
-                System.out.println("Sorry, your total quantity for this product has exceeded 100 or is less than 0. Please re-enter the quantity again: ");
-                System.out.println("QUANTITY: ");
-                stuff[0].orderquantity = 0;
-                stuff[0].orderquantity = stuff[0].orderquantity + in.nextInt();                            
-             }
-                stuff[0].totalweight = stuff[0].orderquantity * stuff[0].weight;
-                stuff[0].totalcost = stuff[0].orderquantity * stuff[0].cost;
-        }
-    }
-        
-    public void getD24()
-    {
-        System.out.println("QUANTITY: ");
-        stuff[1].orderquantity = stuff[1].orderquantity + in.nextInt();
-            {
-                while (stuff[1].orderquantity > 100 || stuff[1].orderquantity < 0)
-                    {
-                        System.out.println("Sorry, your total quantity for this product has exceeded 100 or is less than 0. Please re-enter the quantity again: ");
-                        System.out.println("QUANTITY: ");
-                        stuff[1].orderquantity = 0;
-                        stuff[1].orderquantity = stuff[1].orderquantity + in.nextInt();                            
-                    }
-                stuff[1].totalweight = stuff[1].orderquantity * stuff[1].weight;
-		stuff[1].totalcost = stuff[1].orderquantity * stuff[1].cost;
-            }
-    }
        
-    public void getM93()
-    {
-        System.out.println("QUANTITY: ");
-        stuff[2].orderquantity = stuff[2].orderquantity + in.nextInt();
-            {
-                while (stuff[2].orderquantity > 100 || stuff[2].orderquantity < 0)
-                    {
-                        System.out.println("Sorry, your total quantity for this product has exceeded 100 or is less than 0. Please re-enter the quantity again: ");
-                        System.out.println("QUANTITY: ");
-                        stuff[2].orderquantity = 0;
-                        stuff[2].orderquantity = stuff[2].orderquantity + in.nextInt();                            
-                    }
-                stuff[2].totalweight = stuff[2].orderquantity * stuff[2].weight;
-		stuff[2].totalcost = stuff[2].orderquantity * stuff[2].cost;
-            }
-    }
-       
-    public void getM94()
-    {
-        System.out.println("QUANTITY: ");
-        stuff[3].orderquantity = stuff[3].orderquantity + in.nextInt();
-            {
-                while (stuff[3].orderquantity > 100 || stuff[3].orderquantity < 0)
-                    {
-                        System.out.println("Sorry, your total quantity for this product has exceeded 100 or is less than 0. Please re-enter the quantity again: ");
-                        System.out.println("QUANTITY: ");
-                        stuff[3].orderquantity = 0;
-                        stuff[3].orderquantity = stuff[3].orderquantity + in.nextInt();                            
-                    }
-                stuff[3].totalweight = stuff[3].orderquantity * stuff[3].weight;
-		stuff[3].totalcost = stuff[3].orderquantity * stuff[3].cost;
-            }
-    }
-     
-    public void getN1C()
-    {
-        System.out.println("QUANTITY: ");
-        stuff[4].orderquantity = stuff[4].orderquantity + in.nextInt();
-            {
-                while (stuff[4].orderquantity > 100 || stuff[4].orderquantity < 0)
-                    {
-                        System.out.println("Sorry, your total quantity for this product has exceeded 100 or is less than 0. Please re-enter the quantity again: ");
-                        System.out.println("QUANTITY: ");
-                        stuff[4].orderquantity = 0;
-                        stuff[4].orderquantity = stuff[4].orderquantity + in.nextInt();                            
-                    }
-                stuff[4].totalweight = stuff[4].orderquantity * stuff[4].weight;
-		stuff[4].totalcost = stuff[4].orderquantity * stuff[4].cost;
-            }
-    }
-    
-    public void getN25()
-    {
-        System.out.println("QUANTITY: ");
-        stuff[5].orderquantity = stuff[5].orderquantity + in.nextInt();
-            {
-                while (stuff[5].orderquantity > 100 || stuff[5].orderquantity < 0)
-                    {
-                        System.out.println("Sorry, your total quantity for this product has exceeded 100 or is less than 0. Please re-enter the quantity again: ");
-                        System.out.println("QUANTITY: ");
-                        stuff[5].orderquantity = 0;
-                        stuff[5].orderquantity = stuff[5].orderquantity + in.nextInt();                            
-                    }
-                stuff[5].totalweight = stuff[5].orderquantity * stuff[5].weight;
-		stuff[5].totalcost = stuff[5].orderquantity * stuff[5].cost;
-            }
-    }
-     
-    public void getNF1()
-    {
-        System.out.println("QUANTITY: ");
-        stuff[6].orderquantity = stuff[6].orderquantity + in.nextInt();
-            {
-                while (stuff[6].orderquantity > 100 || stuff[6].orderquantity < 0)
-                    {
-                        System.out.println("Sorry, your total quantity for this product has exceeded 100 or is less than 0. Please re-enter the quantity again: ");
-                        System.out.println("QUANTITY: ");
-                        stuff[6].orderquantity = 0;
-                        stuff[6].orderquantity = stuff[6].orderquantity + in.nextInt();                            
-                    }
-                stuff[6].totalweight = stuff[6].orderquantity * stuff[6].weight;
-		stuff[6].totalcost = stuff[6].orderquantity * stuff[6].cost;
-            }
-    }
-    
-    public void getH11()
-    {
-        System.out.println("QUANTITY: ");
-        stuff[7].orderquantity = stuff[7].orderquantity + in.nextInt();
-            {
-                while (stuff[7].orderquantity > 100 || stuff[7].orderquantity < 0)
-                    {
-                        System.out.println("Sorry, your total quantity for this product has exceeded 100 or is less than 0. Please re-enter the quantity again: ");
-                        System.out.println("QUANTITY: ");
-                        stuff[7].orderquantity = 0;
-                        stuff[7].orderquantity = stuff[7].orderquantity + in.nextInt();                            
-                    }
-                stuff[7].totalweight = stuff[7].orderquantity * stuff[7].weight;
-		stuff[7].totalcost = stuff[7].orderquantity * stuff[7].cost;
-            }
-    }
-       
-    public void getA12()
+    /*public void getA12()
     {
         System.out.println("QUANTITY: ");
         stuff[8].orderquantity = stuff[8].orderquantity + in.nextInt();
@@ -202,6 +67,7 @@ public class order
 		stuff[8].totalcost = stuff[8].orderquantity * stuff[8].cost;
             }
     }
+     */
         
     public void takeXX()
     {
@@ -230,7 +96,6 @@ public class order
     public void takeInvoice()
 		{
                     System.out.println("\nINVOICE FOR ORDER:");
-		    customer a = new customer();
                     a.invoiceCustomer();
 		    ttcost = 0;
 		    ttweight = 0;
@@ -273,73 +138,33 @@ public class order
             boolean breaker = true;
             while (breaker == true)
             {
+                
                 eraseOldOrders();
                 getCustomer();
                 System.out.println("\nENTER CODE: (XX to Stop)");
-                {
+                    boolean success = false;
                     while (true)
-                        {
+                    {
                             System.out.println("CODE: "); 
                             String input = in.next();
+                            if (input.equalsIgnoreCase("XX"))
                             {
-                                if (input.equalsIgnoreCase(stuff[0].pid))
-                                {
-                                    getK16();
-                                }
-                                
-                                else if (input.equalsIgnoreCase(stuff[1].pid))
-                                {
-                                    getD24();
-                                }
-                                
-                                else if (input.equalsIgnoreCase(stuff[2].pid))
-                                {
-                                    getM93();
-                                }
-                                
-                                else if (input.equalsIgnoreCase(stuff[3].pid))
-                                {
-                                    getM94();
-                                }
-                                
-                                else if (input.equalsIgnoreCase(stuff[4].pid))
-                                {
-                                    getN1C();
-                                }
-                                
-                                else if (input.equalsIgnoreCase(stuff[5].pid))
-                                {
-                                    getN25();
-                                }
-                                
-                                else if (input.equalsIgnoreCase(stuff[6].pid))
-                                {
-                                    getNF1();
-                                }
-                                
-                                else if (input.equalsIgnoreCase(stuff[7].pid))
-                                {
-                                    getH11();
-                                }
-                                
-                                else if (input.equalsIgnoreCase(stuff[8].pid))
-                                {
-                                    getA12();
-                                }
-                                
-                                else if (input.equalsIgnoreCase("XX"))
-                                {
                                     takeXX();
                                     break;
-                                }
+                            }
+                            for(int i = 0 ; i< stuff.length;i++)
+                            {
+                                if(input.equalsIgnoreCase(stuff[i].pid))
+                                {   success = true;
+                                    stuff[i].getorderQuantity();}
                                 
-                                else
+                                if(success==false && i==stuff.length - 1)
                                 {
                                     System.out.println("You have entered an invalid code. Please try again.");
                                 }
                             }
-                        }
-                }
+                    
+                    }
         end n = new end();
         n.endcase();
         in.nextLine();
@@ -347,23 +172,24 @@ public class order
 	{
 	    System.out.print("> ");
 	    String nextpls = in.nextLine();
-		if (nextpls.equalsIgnoreCase("no") || nextpls.equalsIgnoreCase("n"))
-        {
-            n.endNo();
-            breaker = false;
-            break;
-            
+            if (nextpls.equalsIgnoreCase("no") || nextpls.equalsIgnoreCase("n"))
+            {
+                n.endNo();
+                breaker = false;
+                break;
+            }
+            else if (nextpls.equalsIgnoreCase("yes") || nextpls.equalsIgnoreCase("y"))
+            {
+                n.endYes();
+                break;
+            }
+            else
+            {
+                System.out.println("\nInvalid response. Please try again.");
+            }
+                
         }
-	else if (nextpls.equalsIgnoreCase("yes") || nextpls.equalsIgnoreCase("y"))
-	{
-	    n.endYes();
-            break;
-	}
-	else
-	{
-	   System.out.println("\nInvalid response. Please try again.");
-	}
-    }   
+            
     }
 }
 }
