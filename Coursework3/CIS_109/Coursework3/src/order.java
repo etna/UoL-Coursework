@@ -12,8 +12,8 @@ public class order
     int ttweight = 0;
     int units = 0;
     int check = 0;
-    double VAT = 20; //must eventually substitute with filereader
-    double ship = 100; //must eventually substitute with filereader
+    double VAT = 0; //must eventually substitute with filereader
+    double ship = 0; //must eventually substitute with filereader
     customer a = new customer();
     
     public void readFile()
@@ -32,6 +32,18 @@ public class order
                 }
                 }
             in.close();
+    }
+    
+    public void shipAndtax()
+    throws IOException
+    {
+        Scanner abs = new Scanner(new FileReader("addoncosts.txt"));
+            while (abs.hasNext()) 
+            {
+                    VAT = Double.parseDouble(abs.nextLine());
+                    ship = Double.parseDouble(abs.nextLine());
+                }
+            abs.close();
     }
     
     public void getCustomer()
@@ -92,6 +104,47 @@ public class order
 		    {
 			    System.out.println("You have ended your session without ordering anything.");
                     }
+    
+    public void writeInvoice()
+            throws IOException
+		{
+                    System.out.println("\nINVOICE FOR ORDER:");
+                    a.invoiceCustomer();
+		    ttcost = 0;
+		    ttweight = 0;
+		    units = 0;
+		    for (int i = 1; i <= 9; i = i + 1)
+		    {
+			if (stuff[i-1].orderquantity > 0)
+                        {
+                        System.out.println(stuff[i-1].pid + "\t" + stuff[i-1].pdesc + "\t" + stuff[i-1].orderquantity + " @  $" + f.format(stuff[i-1].cost / 100) + "\t  $" + f.format(stuff[i-1].totalcost / 100)+ "    " + "\t" + stuff[i-1].totalweight + "g");
+			ttcost = ttcost + stuff[i-1].totalcost;
+			ttweight = ttweight + stuff[i-1].totalweight;
+                        }
+		    }
+		    units = ttweight / 250;
+                    check = ttweight % 250;
+		    {
+			if (check != 0)
+                        {
+                            units = units + 1;
+		    ttcost = ttcost / 100;
+		    shipcost = (units * ship) / 100;
+		    double tbt = ttcost + shipcost;
+		    double tax = tbt * (VAT / 100);
+		    double tft = tbt + tax;
+		    System.out.println("\t\t\t\t\t\t\t\t\t\t Total: $" + f.format(ttcost));
+		    System.out.println("\t\tSHIPPING: " + ttweight + "g @ $1.00 per 250g" + "\t\t\t\t\t\t$" + f.format(shipcost));
+		    System.out.println("\t\t\t\t\t\t\t\t  TOTAL INCL. SHIPPING: $" + f.format(tbt));
+		    System.out.println("\t\t\t\t\t\t\t\tVAT at 20%" + "$" + f.format(tax));
+		    System.out.println("\t\t\t\t\t\t\t\t\t  TOTAL TO PAY: $" + f.format(tft));
+		}
+                        else
+                        {
+                            System.out.println("You have entered an invalid code. Please try again.");
+                        }
+                    }
+                }
 			
     public void takeInvoice()
 		{

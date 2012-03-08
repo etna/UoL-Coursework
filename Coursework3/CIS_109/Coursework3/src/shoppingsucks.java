@@ -51,6 +51,7 @@ public class shoppingsucks
         playInventory();
         System.out.println("");
         o.readFile();
+        o.shipAndtax();
         o.startOrder();
     }
 }
