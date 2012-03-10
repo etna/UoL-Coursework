@@ -45,7 +45,7 @@ public class customer
     {
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter your State of residence: ");
-        System.out.println("> ");
+        System.out.print("> ");
         state = in.nextLine();
         return state;
     }
@@ -54,7 +54,7 @@ public class customer
     {
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter your postal code: ");
-        System.out.println("> ");
+        System.out.print("> ");
         pcode = in.nextLine();
         return pcode;
     }
