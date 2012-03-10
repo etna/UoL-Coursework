@@ -82,6 +82,7 @@ public class order
      */
         
     public void takeXX()
+            throws IOException
     {
         int tquantity = 0;
 		    for (int z = 1; z <= 9; z = z + 1)
@@ -95,7 +96,9 @@ public class order
                     
                     else
                     {
+                        writeInvoice();
                         takeInvoice();
+                        
                         
                     }
     }
@@ -108,8 +111,13 @@ public class order
     public void writeInvoice()
             throws IOException
 		{
-                    System.out.println("\nINVOICE FOR ORDER:");
-                    a.invoiceCustomer();
+                    DateFormat dateFormat = new SimpleDateFormat("dd_MM_yyyy");
+                    Date thedate = new Date();
+                    String filename = "Invoice_" + dateFormat.format(thedate) + ".txt";
+                    FileWriter write = new FileWriter(filename, true);
+                    PrintWriter printer = new PrintWriter(write);
+                    printer.println("\nINVOICE FOR ORDER:");
+                    printer.println(a.invoiceCustomerfile());
 		    ttcost = 0;
 		    ttweight = 0;
 		    units = 0;
@@ -117,7 +125,7 @@ public class order
 		    {
 			if (stuff[i-1].orderquantity > 0)
                         {
-                        System.out.println(stuff[i-1].pid + "\t" + stuff[i-1].pdesc + "\t" + stuff[i-1].orderquantity + " @  $" + f.format(stuff[i-1].cost / 100) + "\t  $" + f.format(stuff[i-1].totalcost / 100)+ "    " + "\t" + stuff[i-1].totalweight + "g");
+                        printer.println(stuff[i-1].pid + "\t" + stuff[i-1].pdesc + "\t" + stuff[i-1].orderquantity + " @  $" + f.format(stuff[i-1].cost / 100) + "\t  $" + f.format(stuff[i-1].totalcost / 100)+ "    " + "\t" + stuff[i-1].totalweight + "g");
 			ttcost = ttcost + stuff[i-1].totalcost;
 			ttweight = ttweight + stuff[i-1].totalweight;
                         }
@@ -133,16 +141,14 @@ public class order
 		    double tbt = ttcost + shipcost;
 		    double tax = tbt * (VAT / 100);
 		    double tft = tbt + tax;
-		    System.out.println("\t\t\t\t\t\t\t\t\t\t Total: $" + f.format(ttcost));
-		    System.out.println("\t\tSHIPPING: " + ttweight + "g @ $1.00 per 250g" + "\t\t\t\t\t\t$" + f.format(shipcost));
-		    System.out.println("\t\t\t\t\t\t\t\t  TOTAL INCL. SHIPPING: $" + f.format(tbt));
-		    System.out.println("\t\t\t\t\t\t\t\tVAT at 20%" + "$" + f.format(tax));
-		    System.out.println("\t\t\t\t\t\t\t\t\t  TOTAL TO PAY: $" + f.format(tft));
+		    printer.println("\t\t\t\t\t\t\t\t\t\t Total: $" + f.format(ttcost));
+		    printer.println("\t\tSHIPPING: " + ttweight + "g @ $1.00 per 250g" + "\t\t\t\t\t\t\t$" + f.format(shipcost));
+		    printer.println("\t\t\t\t\t\t\t\t  TOTAL INCL. SHIPPING: $" + f.format(tbt));
+		    printer.println("\t\t\t\t\t\t\t\t  VAT at 20%" + "\t\t$" + f.format(tax));
+		    printer.printf("\t\t\t\t\t\t\t\t\t  TOTAL TO PAY: $" + f.format(tft));
+                    printer.close();
 		}
-                        else
-                        {
-                            System.out.println("You have entered an invalid code. Please try again.");
-                        }
+                        
                     }
                 }
 			
@@ -174,10 +180,11 @@ public class order
 		    double tax = tbt * (VAT / 100);
 		    double tft = tbt + tax;
 		    System.out.println("\t\t\t\t\t\t\t\t\t\t Total: $" + f.format(ttcost));
-		    System.out.println("\t\tSHIPPING: " + ttweight + "g @ $1.00 per 250g" + "\t\t\t\t\t$" + f.format(shipcost));
+		    System.out.println("\t\tSHIPPING: " + ttweight + "g @ $1.00 per 250g" + "\t\t\t\t\t\t$" + f.format(shipcost));
 		    System.out.println("\t\t\t\t\t\t\t\t  TOTAL INCL. SHIPPING: $" + f.format(tbt));
-		    System.out.println("\t\t\t\t\t\t\t\tVAT at 20%" + "\t\t$" + f.format(tax));
+		    System.out.println("\t\t\t\t\t\t\t\t  VAT at 20%" + "\t\t$" + f.format(tax));
 		    System.out.println("\t\t\t\t\t\t\t\t\t  TOTAL TO PAY: $" + f.format(tft));
+                    System.out.println("\n A copy of this invoice has been printed.");
 		}
                         else
                         {
@@ -187,6 +194,7 @@ public class order
                 }
     
     public void startOrder()
+            throws IOException
     {
             boolean breaker = true;
             while (breaker == true)

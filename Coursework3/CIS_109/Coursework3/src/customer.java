@@ -84,9 +84,15 @@ public class customer
         System.out.println(fullname);
         System.out.println(saddress);
         System.out.println(bnumber);
-        System.out.println(state);
         System.out.println(state + "	POST CODE: " + pcode);
         System.out.println();
+       
+    }
+    
+    public String invoiceCustomerfile()
+    {
+        String detail = fullname + "\n" + saddress + "\n" + bnumber + "\n" + state + "	POST CODE: " + pcode;
+        return detail;
        
     }
 }
