@@ -62,25 +62,8 @@ public class order
 	    stuff[r-1].totalcost = 0;
         }
     }
-       
-    /*public void getA12()
-    {
-        System.out.println("QUANTITY: ");
-        stuff[8].orderquantity = stuff[8].orderquantity + in.nextInt();
-            {
-               while (stuff[8].orderquantity > 100 || stuff[8].orderquantity < 0)
-                    {
-                        System.out.println("Sorry, your total quantity for this product has exceeded 100 or is less than 0. Please re-enter the quantity again: ");
-                        System.out.println("QUANTITY: ");
-                        stuff[8].orderquantity = 0;
-                        stuff[8].orderquantity = stuff[8].orderquantity + in.nextInt();                            
-                    }
-                stuff[8].totalweight = stuff[8].orderquantity * stuff[8].weight;
-		stuff[8].totalcost = stuff[8].orderquantity * stuff[8].cost;
-            }
-    }
-     */
         
+    
     public void takeXX()
             throws IOException
     {
@@ -142,7 +125,7 @@ public class order
 		    double tax = tbt * (VAT / 100);
 		    double tft = tbt + tax;
 		    printer.println("\t\t\t\t\t\t\t\t\t\t Total: $" + f.format(ttcost));
-		    printer.println("\t\tSHIPPING: " + ttweight + "g @ $1.00 per 250g" + "\t\t\t\t\t\t\t$" + f.format(shipcost));
+		    printer.println("\t\tSHIPPING: " + ttweight + "g @ $1.00 per 250g" + "\t\t\t\t\t\t$" + f.format(shipcost));
 		    printer.println("\t\t\t\t\t\t\t\t  TOTAL INCL. SHIPPING: $" + f.format(tbt));
 		    printer.println("\t\t\t\t\t\t\t\t  VAT at 20%" + "\t\t$" + f.format(tax));
 		    printer.printf("\t\t\t\t\t\t\t\t\t  TOTAL TO PAY: $" + f.format(tft));
@@ -174,6 +157,7 @@ public class order
 			if (check != 0)
                         {
                             units = units + 1;
+                        }
 		    ttcost = ttcost / 100;
 		    shipcost = (units * ship) / 100;
 		    double tbt = ttcost + shipcost;
@@ -186,12 +170,8 @@ public class order
 		    System.out.println("\t\t\t\t\t\t\t\t\t  TOTAL TO PAY: $" + f.format(tft));
                     System.out.println("\n A copy of this invoice has been printed.");
 		}
-                        else
-                        {
-                            System.out.println("You have entered an invalid code. Please try again.");
-                        }
                     }
-                }
+                
     
     public void startOrder()
             throws IOException

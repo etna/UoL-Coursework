@@ -1,0 +1,38 @@
+
+INVOICE FOR ORDER:
+sdf
+sdf
+sdf
+sdf	POST CODE: sdf
+K16	Wood screws, brass, 20mm, pack of 50		1 @  $7.75	  $7.75    	150g
+										 Total: $7.75
+		SHIPPING: 150g @ $1.00 per 250g						$1.00
+								  TOTAL INCL. SHIPPING: $8.75
+								  VAT at 20%		$1.75
+									  TOTAL TO PAY: $10.50
+INVOICE FOR ORDER:
+sdflkh
+skdfh
+dkfhs
+sdflkj	POST CODE: sdkfjh
+K16	Wood screws, brass, 20mm, pack of 50		1 @  $7.75	  $7.75    	150g
+N1C	Nailgun, consumer, 1 unit			1 @  $99.99	  $99.99    	2500g
+N25	Nails, steel, 20mm, pack of 50			1 @  $9.75	  $9.75    	250g
+H11	Hammer, rounded, 1 unit				1 @  $31.00	  $31.00    	1550g
+A12	Axe, double-sided, 1 unit			1 @  $55.00	  $55.00    	1875g
+										 Total: $203.49
+		SHIPPING: 6325g @ $1.00 per 250g						$26.00
+								  TOTAL INCL. SHIPPING: $229.49
+								  VAT at 20%		$45.90
+									  TOTAL TO PAY: $275.39
+INVOICE FOR ORDER:
+Bill Silic
+Apt 28
+Building 3
+Winchester	POST CODE: 89763
+K16	Wood screws, brass, 20mm, pack of 50		6 @  $7.75	  $46.50    	900g
+										 Total: $46.50
+		SHIPPING: 900g @ $1.00 per 250g						$4.00
+								  TOTAL INCL. SHIPPING: $50.50
+								  VAT at 20%		$10.10
+									  TOTAL TO PAY: $60.60
