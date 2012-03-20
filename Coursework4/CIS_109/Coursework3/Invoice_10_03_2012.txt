@@ -1,0 +1,27 @@
+
+
+INVOICE FOR ORDER:
+INVOICE FOR ORDER:
+t
+t
+t
+t	POST CODE: t
+K16	Wood screws, brass, 20mm, pack of 50		1 @  $7.75	  $7.75    	150g
+D24	Wood glue, clear, 1 litre			1 @  $5.50	  $5.50    	450g
+										 Total: $13.25
+		SHIPPING: 600g @ $1.00 per 250g							$3.00
+								  TOTAL INCL. SHIPPING: $16.25
+									  TOTAL TO PAY: $19.50
+INVOICE FOR ORDER:
+test
+t
+t
+t	POST CODE: t
+K16	Wood screws, brass, 20mm, pack of 50		1 @  $7.75	  $7.75    	150g
+M93	Sandpaper, medium grade, 100 sheets		1 @  $10.25	  $10.25    	125g
+M94	Sandpaper, fine grade, 100 sheets		1 @  $14.75	  $14.75    	125g
+										 Total: $32.75
+		SHIPPING: 400g @ $1.00 per 250g							$2.00
+								  TOTAL INCL. SHIPPING: $34.75
+								  VAT at 20%		$6.95
+									  TOTAL TO PAY: $41.70
