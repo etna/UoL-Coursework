@@ -1,0 +1,29 @@
+Things to make for Java GUI program:
+
+1)  Create a Window (Alert type with one button) that tells the examiner about this program. 	 'Ok' will close the window and open up a new window, pressing 'X' on the window decoration 	   terminates the program.
+
+
+2)  User selects 'Ok' (they have to), new window is opened with three buttons; 
+
+	- 1st button opens an new window describing how the program works and the steps done to 	  arrive at the program (description to be as simplified as possible)
+
+	- 2nd button is an 'About' button that specifies version of Java used to compile, IDE 		  used to compile, where the original source was taken, etc etc. Alert type to be used.
+
+	- 3rd button quits the program. Alternatively, user can also use the 'X' button on the 		  window decoration to terminate the program.
+
+
+3) 1st button should open a window:
+
+	- 1st window should be an 'Alert' type window with only 1 button ('Ok'). If the user 		  wants to quit, use the 'X' button on the window decorator.
+
+	- Selecting 'Ok' opens a new window with two buttons ('Previous' and 'Next'). Self 		  explanatory at this point: 'Previous' takes the users back to the previous window 		  until the first window is reached; 'next' takes the user forward until I run out of 		  windows to annoy them with.
+
+	- When last window is reached, three button choices should be available; a 'Previous' 		  to go back to the previous windows, a 'Start over' to start over (duh), and a 'Quit' 		  to end.
+
+
+4) 'About' button should ideally contain clickable links to the various sources referenced for  the source code. According to prelimnary research, JLabel supports the use of basic HTML elements.
+
+
+5) 'Quit' should close the menu and, if time permits, generate a 'Thank you' window
+
+
